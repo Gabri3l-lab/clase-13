@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluar número</title>
+    <style>
+        table{
+            margin:auto;width: 50%;
+        }
+        input[type=text]{
+            padding:10px;
+        }
+        input[type=button]{
+            background-color: black;
+            color:cornflowerblue;
+            cursor: pointer;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        function calcular(){
+            //leer el valor del número
+            //parseInt es una función que convierte a número entero
+            let xn = parseInt(document.getElementById("txtNum").value);
+
+            if(xn == 0){
+                document.getElementById("txtRes").value = "Cero";
+            }else{
+                if(xn > 0){
+                    document.getElementById("txtRes").value = "Positivo";
+                }else{
+                    document.getElementById("txtRes").value = "Negativo";
+                }
+            }
+
+        }
+        function limpiar(){
+            document.getElementById("txtNum").value="";
+            document.getElementById("txtRes").value="";
+            document.getElementById("txtNum").focus();//focalizar el cursor 
+        }
+    </script>
+</head>
+<body>
+    <h1>Evaluar número</h1>
+    <hr>
+    <div style="text-align:center ;">
+        <img src="img/caja.jpg" alt="">
+    </div>
+    <table>
+        <!--Caption : Titulo de la tabla-->
+        <caption>Evaluar número</caption>
+        <tr>
+            <td>Número</td>
+            <td>
+                <input type="text" name="" id="txtNum">
+            </td>
+        </tr>
+        <tr>
+            <td>resultado</td>
+            <td>
+                <input type="text" name="" id="txtRes">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input onclick="calcular();" type="button" value="Calcular">
+            </td>
+            <td>
+                <input onclick="limpiar();" type="button" value="Limpiar">
+            </td>
+        </tr>
+    </table>
+    
+</body>
+</html>
